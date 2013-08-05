@@ -5,12 +5,6 @@ module.exports = function(app) {
   // Generate initial documents
   Modules.generate(1,10);
 
-  app.get('/test', function(req, res) {
-    Modules.find({}).then(function(modules) {
-      res.send('while(1);' + JSON.stringify(modules));  
-    });
-  });
-
   app.get('/api/v1/courses/:course_id/modules', function(req, res) {
     Modules.find({
       course_id: parseInt(req.params.course_id)
