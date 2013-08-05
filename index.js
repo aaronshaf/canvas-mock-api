@@ -7,7 +7,7 @@ module.exports = function(app) {
 
   app.get('/api/v1/courses/:course_id/modules', function(req, res) {
     Modules.find({
-      course_id: parseInt(req.params.course_id)
+      course_id: parseInt(req.params.course_id,10)
     }).then(function(modules) {
       res.type('application/json');
       res.send('while(1);' + JSON.stringify(modules));  
@@ -16,7 +16,7 @@ module.exports = function(app) {
 
   app.get('/api/v1/courses/:course_id/modules/:module_id/items', function(req, res) {
     ModuleItems.find({
-      module_id: parseInt(req.params.module_id)
+      module_id: parseInt(req.params.module_id,10)
     }).then(function(module_items) {
       res.type('application/json');
       res.send('while(1);' + JSON.stringify(module_items));  
