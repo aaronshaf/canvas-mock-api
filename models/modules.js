@@ -12,7 +12,7 @@ var Modules = {
     var x,y;
 
     for(x = 0;x < count;x++) {
-      Modules.create({
+      Modules.post({
         "id": ++lastId,
         "name": randomWords(_.random(4,8)).join(' '),
         "position": 1,
@@ -28,7 +28,7 @@ var Modules = {
     }
   },
 
-  create: function(document) {
+  post: function(document) {
     return new RSVP.Promise(function(resolve, reject) {
       db.insert(document, function (error, document) {
         if(error) return reject(error);

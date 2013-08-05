@@ -9,7 +9,7 @@ var lastId = 0;
 var ModuleItems = {
   generate: function(module_id,count) {
     for(var x = 0;x < count;x++) {
-      ModuleItems.create({
+      ModuleItems.post({
         "id": ++lastId,
         "indent": _.random(0,3),
         "position": 1,
@@ -24,7 +24,7 @@ var ModuleItems = {
     }
   },
 
-  create: function(document) {
+  post: function(document) {
     return new RSVP.Promise(function(resolve, reject) {
       db.insert(document, function (error, document) {
         if(error) return reject(error);
