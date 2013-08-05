@@ -22,4 +22,10 @@ module.exports = function(app) {
       res.send('while(1);' + JSON.stringify(module_items));  
     });
   });
+
+  app.put('/api/v1/courses/:course_id/modules/:module_id/items/:module_item_id', function(req, res) {
+    ModuleItems.patch(parseInt(req.params.module_item_id,10),req.body).then(function() {
+      res.send(true);
+    });
+  });
 };
