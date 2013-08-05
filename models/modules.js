@@ -41,6 +41,9 @@ var Modules = {
     return new RSVP.Promise(function(resolve, reject) {
       db.find(criteria,function(error, documents) {
         if(error) return reject(error);
+        documents = _.sortBy(documents,function(module_item) {
+          return module_item.position;
+        })
         resolve(documents);
       });
     });
