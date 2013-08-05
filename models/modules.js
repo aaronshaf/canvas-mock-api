@@ -1,5 +1,6 @@
 var RSVP = require('rsvp');
 var _ = require('underscore');
+var randomWords = require('random-words');
 var Datastore = require('nedb');
 var ModuleItems = require('./module_items');
 var db = new Datastore({inMemoryOnly: true});
@@ -13,7 +14,7 @@ var Modules = {
     for(x = 0;x < count;x++) {
       Modules.create({
         "id": ++lastId,
-        "name": "Test " + lastId,
+        "name": randomWords(_.random(4,8)).join(' '),
         "position": 1,
         "course_id": course_id,
         "unlock_at": null,

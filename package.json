@@ -16,7 +16,8 @@
     "nedb": "~0.8.5",
     "rsvp": "~2.0.1",
     "express": "~3.3.4",
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "random-words": "0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

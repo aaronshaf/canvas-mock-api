@@ -1,5 +1,6 @@
 var RSVP = require('rsvp');
 var Datastore = require('nedb');
+var randomWords = require('random-words');
 var db = new Datastore({inMemoryOnly: true});
 var _ = require('underscore');
 
@@ -12,7 +13,7 @@ var ModuleItems = {
         "id": ++lastId,
         "indent": _.random(0,3),
         "position": 1,
-        "title": "Bla bla bla",
+        "title": randomWords(_.random(5,10)).join(' '),
         "type": "Discussion",
         "module_id": module_id,
         "html_url": "http://localhost:8000/courses/1/modules/items/2",
