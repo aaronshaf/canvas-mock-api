@@ -66,6 +66,16 @@ var Modules = {
       });
     });
   },
+  patch: function(id,patch) {
+    return new RSVP.Promise(function(resolve, reject) {
+      db.update({id: id}, {
+        $set: patch.module
+      },{}, function(error, numReplaced) {
+        if(error) return reject(error);
+        resolve();
+      });
+    });
+  },
 
   remove: function(id) {
     return new RSVP.Promise(function(resolve, reject) {
