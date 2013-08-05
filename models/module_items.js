@@ -12,8 +12,8 @@ var ModuleItems = {
       ModuleItems.post({
         "id": ++lastId,
         "indent": _.random(0,3),
-        "position": 1,
-        "title": randomWords(_.random(5,10)).join(' '),
+        "position": x + 1,
+        "title": randomWords(_.random(4,8)).join(' '),
         "type": "Discussion",
         "module_id": module_id,
         "html_url": "http://localhost:8000/courses/1/modules/items/2",
