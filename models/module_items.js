@@ -8,10 +8,11 @@ var lastId = 0;
 
 var ModuleItems = {
   generate: function(module_id,count) {
+    var indent = 0;
     for(var x = 0;x < count;x++) {
       ModuleItems.post({
         "id": ++lastId,
-        "indent": _.random(0,3),
+        "indent": indent,
         "position": x + 1,
         "title": randomWords(_.random(3,6)).join(' '),
         "type": ['Document','Download','Discussion','Assignment','Quiz','Link'][_.random(5)],
@@ -21,6 +22,15 @@ var ModuleItems = {
         "url": "http://localhost:8000/api/v1/courses/1/discussion_topics/1",
         "published": true
       });
+
+      
+      if(indent === 0) {
+        indent += _.random(0,1);
+      } else if(indent > 0 && indent < 4) {
+        indent += _.random(-1,1);
+      } else if(indent >= 4) {
+        indent += _.random(-1,0);
+      }
     }
   },
 
