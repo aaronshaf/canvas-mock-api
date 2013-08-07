@@ -13,7 +13,7 @@ var ModuleItems = {
         "id": ++lastId,
         "indent": _.random(0,3),
         "position": x + 1,
-        "title": randomWords(_.random(4,8)).join(' '),
+        "title": randomWords(_.random(3,6)).join(' '),
         "type": ['Document','Download','Discussion','Assignment','Quiz','Link'][_.random(5)],
         "module_id": module_id,
         "html_url": "http://localhost:8000/courses/1/modules/items/2",

@@ -14,7 +14,7 @@ var Modules = {
     for(x = 0;x < count;x++) {
       Modules.post({
         "id": ++lastId,
-        "name": randomWords(_.random(4,8)).join(' '),
+        "name": randomWords(_.random(3,7)).join(' '),
         "position": 1,
         "course_id": course_id,
         "unlock_at": null,
